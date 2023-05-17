@@ -32,3 +32,10 @@ a{
     width: 40px;
     height: 40px;
 }
+.logo{
+    border-radius: 30px;
+    border: solid;
+    border: black;
+    border-width: 20px;
+    margin:20px;
+}

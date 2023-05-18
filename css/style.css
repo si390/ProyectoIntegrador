@@ -50,6 +50,37 @@ a{
     padding: 10px;
     display: inline-block;
 }
+.burbuja1{
+    background-color: rgba(91, 192, 190, 1);
+    border-radius: 12%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    margin: 40px;
+    text-align: center;
+    display: inline-block;
+}
+.burbuja2{
+    background-color: rgba(91, 192, 190, 1);
+    border: solid rgba(91, 192, 190, 1);
+    border-width: 10px;
+    border-radius: 10%;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+}
+.descubrir{
+    color: rgba(11, 19, 43, 1);
+    text-size-adjust: 44px;
+    background-color: rgba(255, 255, 255, 1);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 20px;
+    border-radius: 10px;
+}
 
 
 

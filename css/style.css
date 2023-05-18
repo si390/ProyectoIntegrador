@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: dimgrey;
+    background-color: rgba(28, 37, 65, 1);
 }
 
 header{
@@ -11,7 +11,7 @@ header{
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
-
+    background-color: rgba(91, 192, 190, 1);
 }
 
 form{
@@ -19,8 +19,10 @@ form{
 }
 
 .navegacion{
+    background-color: rgba(11, 19, 43, 1);
     padding: 20px;
     margin: 10px;
+    border-radius: 30px;
 }
 
 a{
@@ -29,8 +31,11 @@ a{
 }
 
 .icono{
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(58, 80, 107, 1);
+    border-radius: 100%;
+    padding: 10px;
 }
 .logo{
     border-radius: 30px;
@@ -39,3 +44,12 @@ a{
     border-width: 20px;
     margin:20px;
 }
+.titulos{
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+}
+
+
+

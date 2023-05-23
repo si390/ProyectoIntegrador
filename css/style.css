@@ -46,7 +46,7 @@ form{
     border: solid;
     border: black;
     border-width: 20px;
-    width: 100%;
+    
 }
 
 h1{
@@ -95,5 +95,33 @@ h1{
     .logo{
         width: 30%;
     }
+
+}
+button{
+  background: hsla(236, 100%, 8%, 1);
+  background: linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1)100%);
+  background: -moz-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000328", endColorstr="#00458E", GradientType=1 );
+  color:rgba(255, 255, 255, 1);
+  text-align: center;
+  display: inline-block;
+  font-size: 40px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.buscador{
+    background: hsla(236, 100%, 8%, 1);
+    background: linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1)100%);
+    background: -moz-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(236, 100%, 8%, 1) 0%, hsla(211, 100%, 28%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000328", endColorstr="#00458E", GradientType=1 );
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+    display: inline-block;
+    font-size: 50px;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 5px;
 
 }

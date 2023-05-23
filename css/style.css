@@ -38,8 +38,8 @@ form{
 }
 
 .icono{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
     padding: 10px;
     background: hsla(225, 59%, 11%, 1);
@@ -48,16 +48,18 @@ form{
     background: -webkit-radial-gradient( hsla(213, 30%, 32%, 1) 0%, hsla(225, 59%, 11%, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0b132bff", endColorstr="#3a506bff", GradientType=1 );
 }
+
 .botonbuscador{
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
 }
+
 .logo{
-    border-radius: 30px;
+    border-radius: 10px;
+    padding-left: 5px;
     border: solid;
     border: black;
-    padding-bottom: 5px;
-    width: 50px;
+    width: 95%;
 }
 
 h1{
@@ -128,7 +130,6 @@ button{
   }
 
 
-
 @media (min-width: 768px){
     h1{
         display: inline-block;
@@ -141,6 +142,10 @@ button{
         padding-bottom: 5px;
         margin: 30px;
         width: 30%;
+    }
+    .botonbuscador{
+        width: 30px;
+        height: 30px;
     }
     .burbuja1{
         display: inline-block;

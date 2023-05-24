@@ -4,7 +4,7 @@
 
 body{
     background-color: rgba(28, 37, 65, 1);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 header{
@@ -12,7 +12,6 @@ header{
     flex-direction: row;
     flex-wrap: wrap;
     background-color: rgba(91, 192, 190, 1);
-    font-family: 'Roboto', sans-serif;
 }
 
 form{

@@ -1,28 +1,39 @@
 let qs = new URLSearchParams(location.search);
 let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/album/302127";
-let articulo = document.querySelectorAll("article");
 
-window.onload = function(){
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
+fetch(url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        let nombrealbum = document.querySelector("h2");
+        let nombreartista = document.querySelector("h3");
+        let albumgenero = document.querySelector(".g");
+        let fechapublicacion = document.querySelector("p");
+        let artista = data.artist.name;
+        let album = data.title;
+        let genero = data.genres.data[0].name;
+        let fecha = data.release_date;
+        nombreartista.innerText = artista;
+        nombrealbum.innerText = album;
+        albumgenero.innerText = genero;
+        fechapublicacion.innerText = fecha;
 
-        .then(function (dzResult) {
-            console.log(dzResult);
+        let imagen = document.querySelector(".album");
+        imagen.src = data.cover_medium;
 
-            //for (let i = 0; i < dzResult.data.length; i++){
-                //articulo.innerHTML = "<h2>" + dzResult.data[i].title + "</h2>";
-                            //"<h3>" +  dzResult.data[i].artist + "</h3>"
-                            //"<h3>" +  dzResult.data[i].genre_id + "</h3>"
-                            //"<p>" + dzResult.data[i].release_date + "</p>"
-                            //"<ol>"
-                                //"<li>" + "</li>"
-                                //"<li>" + "</li>"
-                                //"<li>" + "</li>"
-                                //"<li>" + "</li>"
-                                //"<li>" + "</li>"
-                            //"</ol>"
-            //}
-        })
-    }   
+    let cancionespadre = document.querySelector(".canciones");
+     
+
+    for (let i = 0; i < data.tracks.data.length; i++){
+        cancionespadre.innerHTML += `<li>${data.tracks.data[i].title}</li>
+                                        `
+                                        
+    }
+
+            
+})
+    .catch(function (error) {
+        return console.error(error);
+    })

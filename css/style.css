@@ -36,8 +36,8 @@ form{
 }
 
 .icono{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     padding: 10px;
     background: hsla(225, 59%, 11%, 1);
@@ -134,13 +134,13 @@ button{
     background: -moz-linear-gradient(0deg, hsla(225, 59%, 11%, 1) 0%, hsla(179, 44%, 55%, 1) 100%);
     background: -webkit-linear-gradient(0deg, hsla(225, 59%, 11%, 1) 0%, hsla(179, 44%, 55%, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0b132bff", endColorstr="#5bc0beff", GradientType=1 );
+    font-family: 'Barlow Semi Condensed', sans-serif;
     color: rgba(255, 255, 255, 1);
     border: solid rgba(91, 192, 190, 1);
     text-align: center;
     border-radius: 20px;
     font-size: 15px;
 }
-
 
 @media (min-width: 768px){
     h1{
@@ -162,9 +162,19 @@ button{
     .burbuja1{
         display: inline-block;
     }
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(11, 19, 43, 1);
+        overflow: auto;
+        padding: 5px;
+      }
+
     .icono{
-        width: 10%;
-        height: 10%;
+        width: 120px;
+        height: 120px;
         border-radius: 10px;
         padding: 10px;
         background: hsla(225, 59%, 11%, 1);

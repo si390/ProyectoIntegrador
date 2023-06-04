@@ -54,7 +54,7 @@ fetch(urlartistas)
 .catch(function(error) {
     console.log("Error: " + error);
 })
-=======
+
 let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/track/3135556";
 let articulo = document.querySelectorAll("article");
 

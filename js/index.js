@@ -54,36 +54,20 @@ fetch(urlartistas)
 .catch(function(error) {
     console.log("Error: " + error);
 })
+=======
+let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/track/3135556";
+let articulo = document.querySelectorAll("article");
 
+window.onload = function(){
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
 
-
-
-fetch(urlsongs)
-.then(function(response) {
-    return response.json()
-})
-.then(function(data) {
-    console.log(data);
-    let seccion = document.querySelector(".canciones");
-    let arraysongs = data.id
-    let canciones = ""
-
-    for(let i = 0; i < arraysongs.length; i++){
-        canciones += `<article>
-                            <h3>Name: ${arraysongs[i].title}</h3>
-                            <img src=${arraysongs[i].md5_image} alt='' />                            
-                            <p>Duración: ${arraysongs[i].duration}</p>
-                        </article>`
-
+        .then(function (dzResult) {
+            console.log(dzResult);
+        })
     }
-        seccion.innerHTML = canciones;
-
-})
-.catch(function(error) {
-    console.log("Error: " + error);
-})
-
-
 
 let darkmode = document.querySelector('.botondarkmode');
 let body = document.body;

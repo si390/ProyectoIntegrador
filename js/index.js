@@ -1,5 +1,5 @@
 let qs = new URLSearchParams(location.search);
-let urlalbums = "https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/albums";
+let urlalbums = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/302127";
 let urlartistas = "https://api.allorigins.win/raw?url=https://api.deezer.com/artist/27";
 let urlsongs = "https://api.allorigins.win/raw?url=https://api.deezer.com/track/3135556";
 
@@ -14,11 +14,11 @@ fetch(urlalbums)
     let arrayalbumes = data;
     let albumes = "";
 
-    for(let i = 0; i < arrayalbumes.length; i++){
+    for(let i = 0; i < 4; i++){
         albumes +=      `<article>
-                            <h3>Name: ${arrayalbumes[i].title}</h3>
-                            <img src=${arrayalbumes[i].cover_medium} alt='' />
-                            <p>Detalle: ${arrayalbumes[i].artist.name}</p>
+                            <h3>Nombre: ${arrayalbumes.title}</h3>
+                            <img src=${arrayalbumes.cover_medium} alt='' />
+                            <p>Detalle: ${arrayalbumes.artist.name}</p>
                         </article>`
 
     }
@@ -37,14 +37,14 @@ fetch(urlartistas)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".artistas");
-    let arrayartistas = data.id
+    let arrayartistas = data;
     let artistas = ""
 
-    for(let i = 0; i < arrayartistas.length; i++){
+    for(let i = 0; i < 4; i++){
         artistas +=     `<article>
-                            <h3>Name: ${arrayartistas[i].name}</h3>
-                            <img src=${arrayartistas[i].picture_small} alt='' />
-                            <p>${arrayartistas[i].nb_album}</p>
+                            <h3>Nombre: ${arrayartistas.name}</h3>
+                            <img src=${arrayartistas.picture} alt='' />
+                            <p>${arrayartistas.tracklist}</p>
                         </article>`
 
     }
@@ -55,19 +55,35 @@ fetch(urlartistas)
     console.log("Error: " + error);
 })
 
-let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/track/3135556";
-let articulo = document.querySelectorAll("article");
 
-window.onload = function(){
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
+fetch(urlsongs)
+.then(function(response) {
+    return response.json()
+})
+.then(function(data) {
+    console.log(data);
+    let seccion = document.querySelector(".canciones");
+    let arraysongs = data;
+    let canciones = "";
 
-        .then(function (dzResult) {
-            console.log(dzResult);
-        })
+    for(let i = 0; i < 4; i++){
+        canciones +=      `<article>
+                            <h3>Nombre: ${arraysongs.title}</h3>
+                            <img src=${arraysongs.md5_image} alt='' />
+                            <p>Detalle: ${arraysongs.artist.name}</p>
+                        </article>`
+
     }
+        seccion.innerHTML = canciones;
+
+})
+.catch(function(error) {
+    console.log("Error: " + error);
+})
+
+
+
+
 
 let darkmode = document.querySelector('.botondarkmode');
 let body = document.body;

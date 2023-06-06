@@ -5,30 +5,20 @@
 body{
     background-color: rgba(28, 37, 65, 1);
     font-family: 'Barlow Semi Condensed', sans-serif;
+    margin: 0%;
 }
 
 header{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     background-color: rgba(91, 192, 190, 1);
 }
 
-form{
-    padding-left: 25px;
-    padding-bottom: 5px;
-}
-
 .navegacion {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
   background-color: rgba(11, 19, 43, 1);
   overflow: auto;
-  padding: 5px;
-}
-
-.navegacion a {
-  float: left;
-  padding: 15px;
 }
 
 .navegacion a:hover {
@@ -159,16 +149,11 @@ button{
         width: 30px;
         height: 30px;
     }
-    .burbuja1{
-        display: inline-block;
-    }
     .navegacion {
         display: flex;
-        flex-direction: row;
-        align-items: center;
         width: 100%;
-        background-color: rgba(11, 19, 43, 1);
-        overflow: auto;
+        flex-direction: row;
+        justify-content: space-around;
         padding: 5px;
       }
 

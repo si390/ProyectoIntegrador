@@ -15,13 +15,16 @@ window.onload = function(){
 
 let darkmode = document.querySelector('.botondarkmode');
 let body = document.body;
+let head = document.header;
 let lightmode = 'light';
 
 darkmode.addEventListener('click', function(){
 
-    body.style.backgroundColor = "black"
-
+    body.style.backgroundColor = "hsla(178, 100%, 87%, 1)";
+    head.style.backgroundColor = "hsla(153, 100%, 74%, 1)";
+    
 })
+
 
 
 

@@ -1,7 +1,7 @@
 let qs = new URLSearchParams(location.search);
-let urlalbums = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/302127";
-let urlartistas = "https://api.allorigins.win/raw?url=https://api.deezer.com/artist/27";
-let urlsongs = "https://api.allorigins.win/raw?url=https://api.deezer.com/track/3135556";
+let urlalbums = "https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/albums";
+let urlartistas = "https://api.allorigins.win/raw?url=https://api.deezer.com/genre/0/artists";
+let urlsongs = "https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks";
 
 
 fetch(urlalbums)
@@ -11,14 +11,14 @@ fetch(urlalbums)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".album");
-    let arrayalbumes = data;
+    let arrayalbumes = data.data;
     let albumes = "";
 
-    for(let i = 0; i < 4; i++){
-        albumes +=      `<article>
-                            <h3>Nombre: ${arrayalbumes.title}</h3>
-                            <img src=${arrayalbumes.cover_medium} alt='' />
-                            <p>Detalle: ${arrayalbumes.artist.name}</p>
+    for(let i = 0; i < arrayalbumes.length; i++){
+        albumes +=      `<article class="burbuja2">
+                            <h2>Nombre: ${arrayalbumes[i].title}</h2>
+                            <img src=${arrayalbumes[i].cover_medium} alt='' />
+                            <p>Artista: ${arrayalbumes[i].artist.name}</p>
                         </article>`
 
     }
@@ -37,14 +37,14 @@ fetch(urlartistas)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".artistas");
-    let arrayartistas = data;
+    let arrayartistas = data.data;
     let artistas = ""
 
-    for(let i = 0; i < 4; i++){
-        artistas +=     `<article>
-                            <h3>Nombre: ${arrayartistas.name}</h3>
-                            <img src=${arrayartistas.picture} alt='' />
-                            <p>${arrayartistas.tracklist}</p>
+    for(let i = 0; i < arrayartistas.length; i++){
+        artistas +=     `<article class="burbuja2">
+                            <h3>Nombre: ${arrayartistas[i].name}</h3>
+                            <img src=${arrayartistas[i].picture_medium} alt='' />
+                            <p>${arrayartistas[i].type}</p>
                         </article>`
 
     }
@@ -63,15 +63,16 @@ fetch(urlsongs)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".canciones");
-    let arraysongs = data;
+    let arraysongs = data.data;
     let canciones = "";
 
-    for(let i = 0; i < 4; i++){
-        canciones +=      `<article>
-                            <h3>Nombre: ${arraysongs.title}</h3>
-                            <img src=${arraysongs.md5_image} alt='' />
-                            <p>Detalle: ${arraysongs.artist.name}</p>
-                        </article>`
+    for(let i = 0; i < arraysongs.length; i++){
+        canciones +=      `<article class="burbuja2">
+                                <h2>Nombre: ${arraysongs[i].title}</h2>
+                                <h3>Album: ${arraysongs[i].album.title}</h3>
+                                <img src=${arraysongs[i].album.cover_medium} alt='' />
+                                <p>Artista: ${arraysongs[i].artist.name}</p>
+                            </article>`
 
     }
         seccion.innerHTML = canciones;

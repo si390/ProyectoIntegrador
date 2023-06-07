@@ -1,14 +1,27 @@
 let qs = new URLSearchParams(location.search);
-let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/playlist/908622995";
-let articulo = document.querySelectorAll("article");
+let url = "https://rickandmortyapi.com/api/character";
 
-window.onload = function(){
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
+fetch(url)
+.then(function(response) {
+    return response.json()
+})
+.then(function(data) {
+    console.log(data);
+    let seccion = document.querySelector(".playlist");
+    let arrayplaylist = data.results;
+    let playlist = "";
 
-        .then(function (dzResult) {
-            console.log(dzResult);
-        })
+    for(let i = 0; i < arrayplaylist.length; i++){
+        playlist +=      `<article class="burbuja1">
+                            <img src="${arrayplaylist[i].image}" alt="">
+                            <h2>Nombre: ${arrayplaylist[i].name}</h2>
+                            <h3>Artista: ${arrayplaylist[i].status}</h3>
+                        </article>`
+
     }
+        seccion.innerHTML = playlist;
+
+})
+.catch(function(error) {
+    console.log("Error: " + error);
+})

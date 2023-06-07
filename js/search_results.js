@@ -30,3 +30,4 @@ fetch(endpointsearch)
 .catch(function(error) {
     console.log("Error: " + error);
 })
+

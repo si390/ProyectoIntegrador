@@ -128,10 +128,10 @@ darkmode.addEventListener('click', function(){
     main.style.background = "-webkit-linear-gradient(135deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 21%, hsla(153, 100%, 74%, 1) 81%, hsla(209, 10%, 41%, 1) 100%)";
     main.style.filter = "progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E6973', endColorstr='#9FFFF5', GradientType=1)";
     
-    botonbuscador.style.background = "hsla(153, 100%, 74%, 1)";
-    botonbuscador.style.background = "linear-gradient(180deg, hsla(153, 100%, 74%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
-    botonbuscador.style.background = "-moz-linear-gradient(180deg, hsla(153, 100%, 74%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
-    botonbuscador.style.background = "-webkit-linear-gradient(180deg, hsla(153, 100%, 74%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
+    botonbuscador.style.background = "hsla(178, 100%, 87%, 1)";
+    botonbuscador.style.background = "linear-gradient(180deg, hsla(178, 100%, 87%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
+    botonbuscador.style.background = "-moz-linear-gradient(180deg, hsla(178, 100%, 87%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
+    botonbuscador.style.background = "-webkit-linear-gradient(180deg, hsla(178, 100%, 87%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
     botonbuscador.style.filter = "progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdfffd', endColorstr='#7cffc4', GradientType=1)";
 
     buscador.style.background = "hsla(153, 100%, 74%, 1)";

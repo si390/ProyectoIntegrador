@@ -1,7 +1,7 @@
 let qs = new URLSearchParams(location.search);
-let urlalbums = "https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/albums";
-let urlartistas = "https://api.allorigins.win/raw?url=https://api.deezer.com/genre/0/artists";
-let urlsongs = "https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks";
+let urlalbums = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums";
+let urlartistas = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists";
+let urlsongs = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks";
 
 
 fetch(urlalbums)
@@ -15,7 +15,7 @@ fetch(urlalbums)
     let albumes = "";
 
     for(let i = 0; i < arrayalbumes.length; i++){
-        albumes +=      `<article class="burbuja2">
+        albumes +=      `<article class="burbuja1">
                             <h2>Nombre: ${arrayalbumes[i].title}</h2>
                             <img src=${arrayalbumes[i].cover_medium} alt='' />
                             <p>Artista: ${arrayalbumes[i].artist.name}</p>

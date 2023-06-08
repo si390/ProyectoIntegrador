@@ -1,7 +1,6 @@
 let querystring = location.search;
 let querystringobject = new URLSearchParams(querystring);
-let url = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/302127?secret_key=a3b2f52a155b0e7d06508fd9e27fc4bb";
-let secretkey = "a3b2f52a155b0e7d06508fd9e27fc4bb";
+let url = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums";
 
 
 fetch(url)
@@ -11,20 +10,17 @@ fetch(url)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".albumes");
+    let arrayalbumes = data.data;
     let albumes = "";
 
-    for (let i = 0; i < 8; i++) { 
-        let album = data;
-      
-        albumes += `<article class="burbuja1">
-                        <img src="${album.cover_medium}" alt="">
-                        <h2>Nombre: ${album.title}</h2>
-                        <h3>Artista: ${album.artist.name}</h3>
-                        <ol>
-                            <li>${album.tracks.data[0].title}</li>
-                        </ol>
-                    </article>`;
-      }
+    for(let i = 0; i < arrayalbumes.length; i++){
+        albumes +=      `<article class="burbuja1">
+                            <h2>Nombre: ${arrayalbumes[i].title}</h2>
+                            <img src=${arrayalbumes[i].cover_medium} alt='' />
+                            <p>Artista: ${arrayalbumes[i].artist.name}</p>
+                        </article>`
+
+    }
         seccion.innerHTML = albumes;
 
 })

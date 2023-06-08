@@ -1,4 +1,4 @@
-let url = "https://rickandmortyapi.com/api/character";
+let url = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks";
 
 fetch(url)
 .then(function(response) {
@@ -7,15 +7,15 @@ fetch(url)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".songs");
-    let arraysongs = data.results;
+    let arraysongs = data.data;
     let canciones = "";
 
     for(let i = 0; i < arraysongs.length; i++){
         canciones +=      `<article class="burbuja1">
-                            <img src="${arraysongs[i].image}" alt="">
-                            <h2>Canción: ${arraysongs[i].name} </h2>
-                            <h3>Artista: ${arraysongs[i].status}</h3>
-                            <h3>Album: ${arraysongs[i].species} </h3>
+                            <img src="${arraysongs[i].album.cover_medium}" alt="">
+                            <h2>Canción: ${arraysongs[i].title} </h2>
+                            <h3>Artista: ${arraysongs[i].artist.name}</h3>
+                            <h3>Album: ${arraysongs[i].album.title} </h3>
                             <div>
                                 <form class="añadiraplaylist" action="playlist.html" method="get">
                                     <div>

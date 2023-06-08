@@ -3,7 +3,7 @@ let qsobject = new URLSearchParams(qs);
 
 let datoAbuscar = qsobject.get("search") 
 
-let endpointsearch = `https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${datoAbuscar}`
+let endpointsearch = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${datoAbuscar}`
 
 fetch(endpointsearch)
 .then(function(response) {
@@ -12,7 +12,7 @@ fetch(endpointsearch)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".results");
-    let arraysearch = data.data
+    let arraysearch = data.data;
     let busqueda = []
 
     for(let i = 0; i < arraysearch.length; i++){

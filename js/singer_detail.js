@@ -1,5 +1,5 @@
 let qs = new URLSearchParams(location.search);
-let url = "https://rickandmortyapi.com/api/character";
+let url = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists";
 
 
 fetch(url)
@@ -9,12 +9,12 @@ fetch(url)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".artists");
-    let arraysingers = data.results;
+    let arraysingers = data.data;
     let artistas = ""
 
     for(let i = 0; i < arraysingers.length; i++){
         artistas += `<article class="burbuja1">
-                            <img src="${arraysingers[i].image}" alt="">
+                            <img src="${arraysingers[i].picture_medium}" alt="">
                             <h2>${arraysingers[i].name}</h2>
                         </article>`
 

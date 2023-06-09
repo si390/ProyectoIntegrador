@@ -112,6 +112,7 @@ let buscador = document.querySelector(".buscador")
 let botonbuscador = document.querySelector(".botonbuscadorconjava")
 let main =  document.querySelector("main")
 let h1 = document.querySelector("h1")
+let article = document.querySelectorAll("article")
 
 darkmode.addEventListener('click', function(){
 
@@ -151,8 +152,16 @@ darkmode.addEventListener('click', function(){
     buscador.style.background = "-webkit-linear-gradient(180deg, hsla(153, 100%, 74%, 1) 0%, hsla(178, 100%, 87%, 1) 100%)";
     buscador.style.filter = "progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdfffd', endColorstr='#7cffc4', GradientType=1)";
     
+    /* coolors.co "gradients" */
+    for (let i = 0; i < article.length; i++){
+        article[i].style.background = "hsla(209, 10%, 41%, 1)";
+        article[i].style.background = "linear-gradient(180deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 50%, hsla(153, 100%, 74%, 1) 75%, hsla(153, 100%, 74%, 1) 100%)";
+        article[i].style.background = "-moz-linear-gradient(180deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 50%, hsla(153, 100%, 74%, 1) 75%, hsla(153, 100%, 74%, 1) 100%)";
+        article[i].style.background = "-webkit-linear-gradient(180deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 50%, hsla(153, 100%, 74%, 1) 75%, hsla(153, 100%, 74%, 1) 100%)";
+        article[i].style.filter = "progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E6973', endColorstr='#9FFFF5', GradientType=1)";
+      }
 
-    for (let i = 0; i < icono.length; i++) {
+    for (let i = 0; i < icono.length; i++){
         /* coolors.co "gradients" */
         icono[i].style.background = "hsla(174, 100%, 81%, 1)";
         icono[i].style.background = "radial-gradient(circle, hsla(174, 100%, 81%, 1) 33%, hsla(153, 100%, 74%, 1) 85%)";

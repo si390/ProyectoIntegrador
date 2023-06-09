@@ -12,12 +12,12 @@ fetch(urlalbums)
     console.log(data);
     let seccion = document.querySelector(".album");
     let arrayalbumes = data.data;
-    let albumes = "";
+    let albumes = " ";
 
     for(let i = 0; i < arrayalbumes.length; i++){
         albumes +=      `<article class="burbuja1">
                             <h2>Nombre: ${arrayalbumes[i].title}</h2>
-                            <img src=${arrayalbumes[i].cover_medium} alt='' />
+                            <img src="${arrayalbumes[i].cover_medium}" alt='' />
                             <p>Artista: ${arrayalbumes[i].artist.name}</p>
                         </article>`
 

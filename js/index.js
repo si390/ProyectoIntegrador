@@ -1,4 +1,4 @@
-let qs = new URLSearchParams(location.search);
+
 let urlalbums = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums";
 let urlartistas = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists";
 let urlsongs = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks";
@@ -16,9 +16,9 @@ fetch(urlalbums)
 
     for(let i = 0; i < arrayalbumes.length; i++){
         albumes +=      `<article class="burbuja1">
-                            <h2>Nombre: ${arrayalbumes[i].title}</h2>
+                            <a href="./album_detail.html"><h2>Nombre: ${arrayalbumes[i].title}</h2>
                             <img src="${arrayalbumes[i].cover_medium}" alt='' />
-                            <p>Artista: ${arrayalbumes[i].artist.name}</p>
+                            <p>Artista: ${arrayalbumes[i].artist.name}</p></a>
                         </article>`
 
     }
@@ -41,11 +41,12 @@ fetch(urlartistas)
     let artistas = ""
 
     for(let i = 0; i < arrayartistas.length; i++){
-        artistas +=     `<a href = "./singer_detail.html"><article class="burbuja2">
+        artistas +=     `<article class="burbuja2">
+                            <a href = "./singer_detail.html">
                             <h3>Nombre: ${arrayartistas[i].name}</h3>
                             <img src=${arrayartistas[i].picture_medium} alt='' />
-                            <p>${arrayartistas[i].type}</p>
-                        </article></a>`
+                            <p>${arrayartistas[i].type}</p> </a>
+                        </article>`
 
     }
         seccion.innerHTML = artistas;
@@ -68,10 +69,11 @@ fetch(urlsongs)
 
     for(let i = 0; i < arraysongs.length; i++){
         canciones +=      `<article class="burbuja2">
+                                <a href="./song_detail.html">
                                 <h2>Nombre: ${arraysongs[i].title}</h2>
                                 <h3>Album: ${arraysongs[i].album.title}</h3>
                                 <img src=${arraysongs[i].album.cover_medium} alt='' />
-                                <p>Artista: ${arraysongs[i].artist.name}</p>
+                                <p>Artista: ${arraysongs[i].artist.name}</p></a>
                             </article>`
 
     }

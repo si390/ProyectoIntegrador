@@ -1,7 +1,7 @@
 let qs = location.search
 let qstoObject = new URLSearchParams(qs);
-let datoABuscar = qstoObject.get("id")
-let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=${datoABuscar}`;
+let datoABuscar = qstoObject.get("id");
+let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${datoABuscar}`;
 
 
 fetch(url)
@@ -11,12 +11,13 @@ fetch(url)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".artists");
+    let artista = data
     let artistas = ""
 
-    for(let i = 0; i < data.data; i++){
+    for(let i = 0; i < artista; i++){
         artistas += `<article class="burbuja1">
-                        <img src="${data.data.picture_medium}" alt="">
-                        <h2>${data.data.artist.name}</h2>
+                        <img src="${artista.picture_medium}" alt="">
+                        <h2>${artista.artist.name}</h2>
                     </article>`
 
     }

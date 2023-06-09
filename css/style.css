@@ -227,29 +227,17 @@ button{
         padding-bottom: 5px;
         border-radius: 20px;
     }
-<<<<<<< HEAD
-    .descubrir{
-=======
     .albumes{
         /* coolors.co "gradients" */
->>>>>>> dab95be850678e37472b2ca64f13589641c12daa
         background: hsla(233, 100%, 90%, 1);
         background: linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
         background: -moz-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
         background: -webkit-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
         filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CAD0FF", endColorstr="#E3E3E3", GradientType=1 );
-<<<<<<< HEAD
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: colum;
-    }
-    
-=======
         text-align: left;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
->>>>>>> dab95be850678e37472b2ca64f13589641c12daa
 
 }

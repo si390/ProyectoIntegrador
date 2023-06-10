@@ -16,7 +16,7 @@ fetch(urlalbums)
 
     for(let i = 0; i < arrayalbumes.length; i++){
         albumes +=      `<article class="burbuja1">
-                            <a href="./album_detail.html?id=${arrayalbumes.id}">
+                            <a href="./album_detail.html?id=${arrayalbumes[i].id}">
                             <h2>Nombre: ${arrayalbumes[i].title}</h2>
                             <img src="${arrayalbumes[i].cover_medium}" alt='' />
                             <p>Artista: ${arrayalbumes[i].artist.name}</p></a>

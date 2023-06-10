@@ -17,7 +17,11 @@ fetch(url)
                             <h2>Canción: ${data.title} </h2>
                             <h3>Artista: ${data.artist.name}</h3>
                             <h3>Album: ${data.album.title} </h3>
-                            <a href="${data.preview}" class="preview">Preview</a>
+                            <audio controls>
+                                <source src="${data.preview}" type="audio/ogg">
+                                <source src="${data.preview}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
                             <div>
                                 <form class="añadiraplaylist" action="playlist.html" method="get">
                                     <div>

@@ -15,8 +15,8 @@ fetch(url)
         canciones +=      `<article class="burbuja1">
                             <img src="${data.album.cover_medium}" alt="">
                             <h2>Canción: ${data.title} </h2>
-                            <h3>Artista: ${data.artist.name}</h3>
-                            <h3>Album: ${data.album.title} </h3>
+                            <a href="./singer_detail.html?id=${data.artist.id}"><h3>Artista: ${data.artist.name}</h3></a>
+                            <a href="./album_detail.html?id=${data.album.id}"><h3>Album: ${data.album.title} </h3></a>
                             <audio controls>
                                 <source src="${data.preview}" type="audio/ogg">
                                 <source src="${data.preview}" type="audio/mpeg">

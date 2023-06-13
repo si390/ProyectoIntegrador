@@ -22,7 +22,7 @@ fetch(url)
         albumes +=      `<article class="burbuja1">
                             <h2>Nombre: ${data.title}</h2>
                             <img src=${data.cover_medium} alt='' />
-                            <p>Artista: ${data.artist.name}</p>
+                            <a href="./singer_detail.html?id=${data.artist.id}"><p>Artista: ${data.artist.name}</p></a>
                             <p>Fecha de publicación: ${data.release_date}</p>
                             <div>
                                 <form class="añadiraplaylist" action="playlist.html" method="get">

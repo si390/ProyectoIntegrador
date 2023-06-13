@@ -38,7 +38,7 @@ fetch(url)
     for(let i = 0; i < tracksarray.length; i++){
         tracks +=   `<article>
                         <ul>
-                            <li>${tracksarray[i].title}</li>
+                        <a href="./song_detail.html?id=${tracksarray[i].id}"><li>${tracksarray[i].title}</li></a>
                         </ul>
                     </article>`   
                         

@@ -49,7 +49,7 @@ fetch(url)
     for(let i = 0; i < arraygenres.length; i++){
         generos +=   `<article>
                         <ol>Género:
-                            <li>${arraygenres[i].name}</li>
+                        <a href="./detail_genres.html?id=${arraygenres[i].id}"><li>${arraygenres[i].name}</li></a>
                         </ol>
                     </article>`   
                     

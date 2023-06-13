@@ -58,6 +58,20 @@ h1{
     border-radius: 20px;
     padding: 10px;
 }
+h4{
+
+        /* coolors.co "gradients" */
+    color: rgba(11, 19, 43, 1);
+    text-size-adjust: 44px;
+    background: hsla(233, 100%, 90%, 1);
+    background: linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CAD0FF", endColorstr="#E3E3E3", GradientType=1 );
+    text-align: center;
+}
+
+
 .burbuja1{
     /* coolors.co "gradients" */
     background: hsla(233, 100%, 90%, 1);
@@ -99,6 +113,21 @@ h1{
     margin-bottom: 10px;
     text-align: left;
     display: inline-block;
+}
+
+.tracks{
+    background: hsla(233, 100%, 90%, 1);
+    background: linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CAD0FF", endColorstr="#E3E3E3", GradientType=1 );
+}
+.genres{
+    background: hsla(233, 100%, 90%, 1);
+    background: linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CAD0FF", endColorstr="#E3E3E3", GradientType=1 );
 }
 .descubrir{
     /* coolors.co "gradients" */
@@ -227,7 +256,7 @@ button{
         padding-bottom: 5px;
         border-radius: 20px;
     }
-    .descubrir{
+    .albumes{
         /* coolors.co "gradients" */
         background: hsla(233, 100%, 90%, 1);
         background: linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);

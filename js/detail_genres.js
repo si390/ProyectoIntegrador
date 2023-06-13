@@ -1,5 +1,7 @@
-let qs = new URLSearchParams(location.search);
-let url = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre";
+let qs = location.search
+let qstoObject = new URLSearchParams(qs);
+let datoABuscar = qstoObject.get("id");
+let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${datoABuscar}`;
 
 fetch(url)
 .then(function(response) {
@@ -8,16 +10,15 @@ fetch(url)
 .then(function(data) {
     console.log(data);
     let seccion = document.querySelector(".detailgeneros");
-    let arraydetailgenres = data.data;
     let detallegeneros = ""
 
-    for(let i = 0; i < arraydetailgenres.length; i++){
-        detallegeneros += `<article class="burbuja1">
-                        <h2>Género: ${arraydetailgenres[i].name}</h2>
-                        <p>Detalle: ${arraydetailgenres[i].status}</p>
-                    </article>`
+        detallegeneros = `<article class="burbuja1">
+                                <h2>Género: ${data.name}</h2>
+                                <img src="${data.picture_medium}"></img>
+                                <p>Detalle: ${data.type}</p>
+                            </article>`
 
-    }
+
         seccion.innerHTML = detallegeneros;
 
 })

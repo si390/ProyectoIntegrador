@@ -17,10 +17,11 @@ fetch(endpointsearch)
 
     for(let i = 0; i < arraysearch.length; i++){
         busqueda +=         `<article class="burbuja1">
-                                <h2>Busqueda para: ${arraysearch[i].artist.name} </h2>
-                                <h3>Album: ${arraysearch[i].album.title} </h3>
-                                <img src="${arraysearch[i].album.cover_medium}" alt="">
-                                <img src="${arraysearch[i].artist.picture_medium}" alt="">
+                                <a href= "./singer_detail.html?id=${arraysearch[i].artist.id}"><h2>${arraysearch[i].artist.name} </h2></a>
+                                <a href= "./song_detail.html?id=${arraysearch[i].id}"><h3>Canción: ${arraysearch[i].title} </h3></a>
+                                <a href= "./album_detail.html?id=${arraysearch[i].album.id}"><h3>Album: ${arraysearch[i].album.title} </h3></a>
+                                <a href= "./album_detail.html?id=${arraysearch[i].album.id}"><img src="${arraysearch[i].album.cover_medium}" alt=""></a>
+                                <a href= "./singer_detail.html?id=${arraysearch[i].artist.id}"><img src="${arraysearch[i].artist.picture_medium}" alt=""></a>
                             </article>`
 
     }

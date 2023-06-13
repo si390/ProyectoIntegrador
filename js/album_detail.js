@@ -37,9 +37,9 @@ fetch(url)
         seccion.innerHTML = albumes;
     for(let i = 0; i < tracksarray.length; i++){
         tracks +=   `<article>
-                        <ol>
+                        <ul>
                             <li>${tracksarray[i].title}</li>
-                        </ol>
+                        </ul>
                     </article>`   
                         
         }
@@ -48,9 +48,9 @@ fetch(url)
 
     for(let i = 0; i < arraygenres.length; i++){
         generos +=   `<article>
-                        <ul>Género:
+                        <ol>Género:
                             <li>${arraygenres[i].name}</li>
-                        </ul>
+                        </ol>
                     </article>`   
                     
         }

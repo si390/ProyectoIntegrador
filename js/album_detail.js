@@ -27,7 +27,7 @@ fetch(url)
                             <div>
                                 <form class="añadiraplaylist" action="playlist.html" method="get">
                                     <div>
-                                        <button type="submit" class="button">Añadir a mi Playlist</button>
+                                        <a href="./playlist.html?id=${data.id}"><button type="submit" class="button">Añadir a mi Playlist</button></a>
                                         <a href="./playlist.html">Ver mi Playlist</a>
                                     </div>
                                 </form>
@@ -63,3 +63,44 @@ fetch(url)
     console.log("Error: " + error);
 })
 
+//Quiero guardar info en local storage
+let linkFavs = document.querySelector('button');
+
+let recuperoStorage = localStorage.getItem('listaFavoritos');
+let storageToArray = JSON.parse(recuperoStorage);
+
+let gifFavoritos = [];
+
+if(recuperoStorage !== null){
+    gifFavoritos = storageToArray
+}
+
+//Cambiar agregar por quitar
+if(gifFavoritos.includes(id)){
+    linkFavs.innerText = "Quitar de favoritos";
+}
+
+
+linkFavs.addEventListener('click', function(e){
+    e.preventDefault();
+    //Preguntar si un elemento está en el array
+    if(gifFavoritos.includes(id)){
+        //Si el elemento ya está entonces que lo saque
+        let posicion = gifFavoritos.indexOf(id);
+        gifFavoritos.splice(posicion, 1);
+        linkFavs.innerText = "Agregar a favoritos";
+    } else{
+        //Cambiar agregar por quitar
+        gifFavoritos.push(id);
+        linkFavs.innerText = "Quitar de favoritos";
+    }
+
+
+
+    gifsAJson = JSON.stringify(gifFavoritos);
+    localStorage.setItem("listaFavoritos", gifsAJson)
+
+    console.log(localStorage);
+})
+
+//Adentro del for ponemos un fetch para lograr que se visualice en la pagina

@@ -46,7 +46,7 @@ console.log("detalle");
 let qsfav = location.search;
 let qsobject = new URLSearchParams(qsfav);
 let id = qsobject.get("id")
-let song = "url de la cancion"
+let song = "file:///C:/Users/netch/OneDrive/Escritorio/proyectointegrador/song_detail.html?id=1765270907"
 let listadefavs = "";
 let llevameafavoritos = document.querySelector(".favoritear");
 let recuperodestorage = localStorage.getItem("listadefavs");

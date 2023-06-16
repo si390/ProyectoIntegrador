@@ -2,6 +2,7 @@ let qs = location.search
 let qstoObject = new URLSearchParams(qs);
 let datoABuscar = qstoObject.get("id");
 let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${datoABuscar}`;
+let añadir = document.querySelector(".añadiraplaylist")
 
 fetch(url)
 .then(function(response) {
@@ -22,14 +23,6 @@ fetch(url)
                                 <source src="${data.preview}" type="audio/mpeg">
                                 Your browser does not support the audio tag.
                             </audio>
-                            <div>
-                                <form class="añadiraplaylist" action="playlist.html" method="get">
-                                    <div>
-                                        <button type="submit" class="button">Añadir a mi Playlist</button>
-                                        <a href="./playlist.html">Ver mi Playlist</a>
-                                    </div>
-                                </form>
-                            </div>
                         </article>`
 
 
@@ -38,4 +31,37 @@ fetch(url)
 })
 .catch(function(error) {
     console.log("Error: " + error);
+})
+
+console.log("detalle");
+
+let qsfav = location.search;
+let qsobject = new URLSearchParams(qsfav);
+let id = qsobject.get("id")
+let song = "url de la cancion"
+let listadefavs = "";
+let llevameafavoritos = document.querySelector(".favoritear");
+let recuperodestorage = localStorage.getItem("listadefavs");
+let storagetoarray = JSON.parse(recuperodestorage);
+let favsong = [];
+
+if (recuperodestorage !== null){
+    favsong = storagetoarray;
+}
+
+if (favsong.includes(id) === true){
+    let cancionaborrar = indexof(id);
+    favsong.splice(cancionaborrar,1);
+    a.innerText = "Agregar de favoritos";
+} else {
+    favsong.push(id);
+    llevameafavoritos.innerText = "Quitar de favoritos";
+}
+
+favsong.addEventListener("click", function(e){
+    e.preventDefault();
+    favsong.push(id);
+    songajson = JSON.stringify(favsong);
+    localStorage.setItem("listadefavs", favsong);
+    console.log(localStorage);
 })

@@ -174,4 +174,50 @@ darkmode.addEventListener('click', function(){
     }
 })
 
+console.log("detalle");
+
+let qs = location.search;
+let qsobject = new URLSearchParams(qs);
+let id = qsobject.get("id")
+let song = "url de la cancion"
+
+fetch(song)
+.then(function(response) {
+  return response.json()
+})
+.then(function(data) {
+  console.log(data);
+  let imagen = document.querySelector("img");
+  imagen.src = data.data.imagenes.original.url;
+})
+.catch(function(error) {
+  console.log("Error: " + error);
+})
+
+let llevameafavoritos = document.querySelector(".clase (clase de que??? no tengo a que ierda ponerle una clase, tipo no hay una etiqueta a en el html y nunca la va a haber viene por js. lpm.)");
+let recuperodestorage = localStorage.getItem("listadefavs");
+let storagetoarray = JSON.parse(recuperodestorage);
+let favsong = [];
+
+if (recuperodestorage !== null){
+    favsong = storagetoarray;
+}
+
+if (favsong.includes(id) === true){
+    let cancionaborrar = indexof(id);
+    favsong.splice(cancionaborrar,1);
+    a.innerText = "Agregar de favoritos";
+} else {
+    favsong.push(id);
+    llevameafavoritos.innerText = "Quitar de favoritos"
+}
+
+favsong.addEventListener("click", function(e){
+    e.preventDefault();
+    songajson = JSON.stringify(favsong);
+    localStorage.setItem("listadefavs", favsong);
+    console.log(localStorage);
+})
+
+
 

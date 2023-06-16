@@ -17,7 +17,7 @@ if(favoritessongs == null && favoritessongs.length == 0) {
 } else {
     for (let i=0; i<favoritessongs.length; i++){
 
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${datoABuscar}`)
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${favoritessongs[i]}?id=${datoABuscar}`)
             .then(function(response){
                 return response.json();
             })
@@ -42,7 +42,7 @@ if(favoritesalbums == null && favoritesalbums.length == 0) {
     } else {
         for (let i=0; i<favoritesalbums.length; i++){
             
-            fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${datoABuscar}`)
+            fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${favoritesalbums[i]}?id=${datoABuscar}`)
                 .then(function(response){
                     return response.json();
                 })

@@ -13,7 +13,7 @@ let listacanciones  = document.querySelector(".songs")
 let listaalbumes    = document.querySelector(".albums")
 
 if(favoritessongs == null && favoritessongs.length == 0) {    
-    listacanciones.innerHTML=`<p>No hay favoritos seleccionados</p>`
+    listacanciones.innerHTML= "<p>No hay favoritos seleccionados</p>"
 } else {
     for (let i=0; i<favoritessongs.length; i++){
 
@@ -27,6 +27,12 @@ if(favoritessongs == null && favoritessongs.length == 0) {
                                             <article class= "burbuja1">
                                                 <a href="./song_detail.html?id=${data.id}"><h2>${data.title}</h2></a>
                                                 <a href="./song_detail.html?id=${data.id}"><img src="${data.album.cover_medium}"" alt="${data.title}"></a>
+                                                <a href="./singer_detail.html?id=${data.artist.id}"><h3>Artista: ${data.artist.name}</h3></a>
+                                                    <audio controls>
+                                                        <source src="${data.preview}" type="audio/ogg">
+                                                        <source src="${data.preview}" type="audio/mpeg">
+                                                        Your browser does not support the audio tag.
+                                                    </audio>
                                             </article>
                                             `
 
@@ -38,7 +44,7 @@ if(favoritessongs == null && favoritessongs.length == 0) {
         }
     }
 if(favoritesalbums == null && favoritesalbums.length == 0) {    
-    listaseries.innerHTML='<p>No hay favoritos seleccionados</p>'
+    listaseries.innerHTML= "<p>No hay favoritos seleccionados</p>"
     } else {
         for (let i=0; i<favoritesalbums.length; i++){
             
@@ -49,9 +55,11 @@ if(favoritesalbums == null && favoritesalbums.length == 0) {
                 .then(function(data){
                     console.log(data);
                     listaalbumes.innerHTML +=   `
-                                                <article>
-                                                    <a href="./album_detail.html?idseries=${data.id}"><h2>${data.name}</h2></a>
-                                                    <a href="./album_detail.html?idseries=${data.id}"><img class="RyF5" src="https://image.tmdb.org/t/p/w185/${data.poster_path}"></a>
+                                                <article class= "burbuja1">
+                                                    <a href="./album_detail.html?id=${data.id}"><h2>Nombre: ${data.title}</h2></a>
+                                                    <a href="./album_detail.html?id=${data.id}"><img src="${data.cover_medium}"></a>
+                                                    <a href="./singer_detail.html?id=${data.artist.id}"><p>Artista: ${data.artist.name}</p></a>
+                                                    <p>Fecha de publicación: ${data.release_date}</p>
                                                 </article>
                                                 `
 

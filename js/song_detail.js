@@ -25,7 +25,7 @@ fetch(url)
                             <div>
                                 <form action="playlist.html" method="get">
                                     <div>
-                                        <button type="submit" class="buttonf"><a href="./playlist.html?id=${data.id}">Añadir a mi Playlist</a></button>
+                                        <button type="submit" class="buttonf"><a href="./playlist.html">Añadir a mi Playlist</a></button>
                                         <a href="./playlist.html">Ver mi Playlist</a>
                                     </div>
                                 </form>

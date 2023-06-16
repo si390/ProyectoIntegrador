@@ -23,6 +23,14 @@ fetch(url)
                                 <source src="${data.preview}" type="audio/mpeg">
                                 Your browser does not support the audio tag.
                             </audio>
+                            <div>
+                                <form class="añadiraplaylist" action="playlist.html" method="get">
+                                    <div>
+                                        <a href="./playlist.html"><button type="submit" class="button">Añadir a mi Playlist</button></a>
+                                        <a href="./playlist.html">Ver mi Playlist</a>
+                                    </div>
+                                </form>
+                            </div>
                         </article>`
 
 

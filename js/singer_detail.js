@@ -16,14 +16,6 @@ fetch(url)
         artistas += `<article class="burbuja1">
                         <img src="${data.picture_medium}" alt="">
                         <h2>${data.name}</h2>
-                        <div>
-                            <form class="añadiraplaylist" action="playlist.html" method="get">
-                                <div>
-                                    <button type="submit" class="button">Añadir a mi Playlist</button>
-                                    <a href="./playlist.html">Ver mi Playlist</a>
-                                </div>
-                            </form>
-                        </div>
                     </article>`
 
 

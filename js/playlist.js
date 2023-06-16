@@ -1,64 +1,64 @@
+let qs = location.search
+let qstoObject = new URLSearchParams(qs);
+let datoABuscar = qstoObject.get("id");
 
-console.log('detalle');
-
-let qs = location.search;
-let qsObj= new URLSearchParams(qs);
-let id = qsObj.get('id');
-let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/playlist/${id}`
-
-
-
-fetch(url)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        console.log(data)
-
-    })
-    .catch(function(error){
-        console.log(error)
-    })
-
-
-//Quiero guardar info en local storage
-let linkFavs = document.querySelector('button');
-
-let recuperoStorage = localStorage.getItem('listaFavoritos');
-let storageToArray = JSON.parse(recuperoStorage);
-
-let gifFavoritos = [];
-
-if(recuperoStorage !== null){
-    gifFavoritos = storageToArray
+if(localStorage.getItem("favoritessongs") != null && localStorage.getItem("favoritessongs")) {
+    favoritessongs  = JSON.parse(localStorage.getItem("favoritessongs"))
+} 
+if(localStorage.getItem("favoritesalbums") != null && localStorage.getItem("favoritesalbums")) {
+    favoritesalbums = JSON.parse(localStorage.getItem("favoritesalbums"))
 }
 
-//Cambiar agregar por quitar
-if(gifFavoritos.includes(id)){
-    linkFavs.innerText = "Quitar de favoritos";
-}
+let listacanciones  = document.querySelector(".songs")
+let listaalbumes    = document.querySelector(".albums")
+
+if(favoritessongs == null && favoritessongs.length == 0) {    
+    listacanciones.innerHTML=`<p>No hay favoritos seleccionados</p>`
+} else {
+    for (let i=0; i<favoritessongs.length; i++){
+
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${datoABuscar}`)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data);
+                listacanciones.innerHTML += `
+                                            <article class= "burbuja1">
+                                                <a href="./song_detail.html?id=${data.id}"><h2>${data.title}</h2></a>
+                                                <a href="./song_detail.html?id=${data.id}"><img src="${data.album.cover_medium}"" alt="${data.title}"></a>
+                                            </article>
+                                            `
 
 
-linkFavs.addEventListener('click', function(e){
-    e.preventDefault();
-    //Preguntar si un elemento está en el array
-    if(gifFavoritos.includes(id)){
-        //Si el elemento ya está entonces que lo saque
-        let posicion = gifFavoritos.indexOf(id);
-        gifFavoritos.splice(posicion, 1);
-        linkFavs.innerText = "Agregar a favoritos";
-    } else{
-        //Cambiar agregar por quitar
-        gifFavoritos.push(id);
-        linkFavs.innerText = "Quitar de favoritos";
+            })
+            .catch(function(error) {
+                return error;
+            })
+        }
     }
+if(favoritesalbums == null && favoritesalbums.length == 0) {    
+    listaseries.innerHTML='<p>No hay favoritos seleccionados</p>'
+    } else {
+        for (let i=0; i<favoritesalbums.length; i++){
+            
+            fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${datoABuscar}`)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    console.log(data);
+                    listaalbumes.innerHTML +=   `
+                                                <article>
+                                                    <a href="./album_detail.html?idseries=${data.id}"><h2>${data.name}</h2></a>
+                                                    <a href="./album_detail.html?idseries=${data.id}"><img class="RyF5" src="https://image.tmdb.org/t/p/w185/${data.poster_path}"></a>
+                                                </article>
+                                                `
 
 
-
-    gifsAJson = JSON.stringify(gifFavoritos);
-    localStorage.setItem("listaFavoritos", gifsAJson)
-
-    console.log(localStorage);
-})
-
-//Adentro del for ponemos un fetch para lograr que se visualice en la pagina
+    })
+    .catch(function(error) {
+        return error;
+    })
+        }
+    }

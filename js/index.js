@@ -106,16 +106,15 @@ formulario.addEventListener('submit', function(event){
 let darkmode = document.querySelector(".botondarkmode");
 let body = document.querySelector("body");
 let header = document.querySelector("header");
-let nav = document.querySelector("nav")
-let icono = document.querySelectorAll(".icono")
-let lightmode = 'light';
-let boton = document.querySelectorAll("button")
-let botondarkmode = document.querySelector(".botondarkmode")
-let buscador = document.querySelector(".buscador")
-let botonbuscador = document.querySelector(".botonbuscadorconjava")
-let main =  document.querySelector("main")
-let h1 = document.querySelector("h1")
-let article = document.querySelectorAll("article")
+let nav = document.querySelector("nav");
+let icono = document.querySelectorAll(".icono");
+let boton = document.querySelectorAll("button");
+let botondarkmode = document.querySelector(".botondarkmode");
+let buscador = document.querySelector(".buscador");
+let botonbuscador = document.querySelector(".botonbuscadorconjava");
+let main =  document.querySelector("main");
+let h1 = document.querySelector("h1");
+let article = document.querySelectorAll("article");
 
 darkmode.addEventListener('click', function(){
 

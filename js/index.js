@@ -116,7 +116,6 @@ let main =  document.querySelector("main");
 let h1 = document.querySelector("h1");
 let article = document.querySelectorAll("article");
 
-
 darkmode.addEventListener('click', function(){
 
     body.style.backgroundColor = "hsla(178, 100%, 87%, 1)";
@@ -157,11 +156,10 @@ darkmode.addEventListener('click', function(){
     
     /* coolors.co "gradients" */
     for (let i = 0; i < article.length; i++){
-        article[i].style.background = "hsla(209, 10%, 41%, 1)";
-        article[i].style.background = "linear-gradient(180deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 50%, hsla(153, 100%, 74%, 1) 75%, hsla(153, 100%, 74%, 1) 100%)";
-        article[i].style.background = "-moz-linear-gradient(180deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 50%, hsla(153, 100%, 74%, 1) 75%, hsla(153, 100%, 74%, 1) 100%)";
-        article[i].style.background = "-webkit-linear-gradient(180deg, hsla(209, 10%, 41%, 1) 0%, hsla(174, 100%, 81%, 1) 50%, hsla(153, 100%, 74%, 1) 75%, hsla(153, 100%, 74%, 1) 100%)";
-        article[i].style.filter = "progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E6973', endColorstr='#9FFFF5', GradientType=1)";
+        article[i].style.border = "solid";
+        article[i].style.borderWidth = "12px";
+        article[i].style.margin = "6px";
+        article[i].style.padding = "3px";
       }
 
     for (let i = 0; i < icono.length; i++){
@@ -174,8 +172,10 @@ darkmode.addEventListener('click', function(){
     }
 })
 
-
 window.addEventListener("load",function(){
     document.getElementById("loader").classList.toggle("loader2")
 
 })
+
+
+

@@ -20,6 +20,7 @@ fetch(url)
 
 
         seccion.innerHTML = artistas;
+        
 
 })
 .catch(function(error) {

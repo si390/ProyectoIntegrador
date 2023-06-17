@@ -26,6 +26,35 @@ fetch(url)
     console.log("Error: " + error);
 })
 
+
+
+let urlartistas = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${datoABuscar}/albums`
+
+fetch(urlartistas)
+.then(function(response) {
+    return response.json()
+})
+.then(function(data) {
+    console.log(data);
+    let seccion = document.querySelector(".artistageneros");
+    let arrayartistas = data.data;
+    let artistas = ""
+    for(let i = 0; i < arrayartistas.length; i++){
+        artistas = `<article class="burbuja1">
+                        <a href="./album_detail.html?id=${arrayartistas[i].id}">
+                        <h2>Nombre: ${arrayartistas[i].title}</h2>
+                        <img src="${arrayartistas[i].cover_medium}"></img></a>
+                    </article>`
+
+
+        seccion.innerHTML = artistas;
+    }
+})
+.catch(function(error) {
+    console.log("Error: " + error);
+})
+
+
 // arranca el dark mode
 let darkmode = document.querySelector(".botondarkmode");
 let body = document.querySelector("body");

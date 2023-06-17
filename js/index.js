@@ -175,4 +175,7 @@ darkmode.addEventListener('click', function(){
 })
 
 
+window.addEventListener("load",function(){
+    document.getElementById("loader").classList.toggle("loader2")
 
+})
